@@ -16,7 +16,6 @@ export default function Meta() {
       <meta name="og:url" content={SEO.openGraph.url} />
       <meta name="og:description" content={SEO.openGraph.description} />
       <meta name="og:image" content={SEO.openGraph.image} />
-      <meta name="propeller" content="410470db0d92f8303850b7aa85fc4bd8" />
     </Head>
   );
 }

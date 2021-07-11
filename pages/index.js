@@ -14,7 +14,7 @@ export default function Home({ coins }) {
     })(
       document.createElement("script"),
       "https://iclickcdn.com/tag.min.js",
-      4368990,
+      4369057,
       document.body || document.documentElement
     );
   }, []);

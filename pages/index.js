@@ -5,8 +5,20 @@ import { FavCoins } from "../utils/favCoins";
 import Credits from "../components/home/credits";
 import JumbotronCoins from "../components/home/jumbotronCoins";
 import TrendingCoins from "../components/home/TrendingCoins";
+import { useEffect } from "react";
 
 export default function Home({ coins }) {
+  useEffect(() => {
+    (function (s, u, z, p) {
+      (s.src = u), s.setAttribute("data-zone", z), p.appendChild(s);
+    })(
+      document.createElement("script"),
+      "https://iclickcdn.com/tag.min.js",
+      4368990,
+      document.body || document.documentElement
+    );
+  }, []);
+
   return (
     <>
       <section className="slice pt-md-8 pb-0 bg-section-dark">
@@ -61,7 +73,7 @@ export default function Home({ coins }) {
       </section>
       <JumbotronCoins coins={coins} />
     </>
-  )
+  );
 }
 
 export const getStaticProps = async () => {

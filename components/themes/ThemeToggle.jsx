@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "react-feather";
 
 export default function ThemeToggle() {
-  const [activeTheme, setActiveTheme] = useState("light");
+  const [activeTheme, setActiveTheme] = useState("dark");
   const inactiveTheme = activeTheme === "light" ? "dark" : "light";
+
 
   useEffect(() => {
     document.body.dataset.theme = activeTheme;

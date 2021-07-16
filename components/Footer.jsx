@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 export default function FooterModule() {
   return (
     <>
       <footer className="position-relative" id="footer-main">
-        <div className="footer pt-lg-7">
+        <div className="footer-dark pt-lg-7">
           <div className="container pt-4">
             <div className="row justify-content-center">
               <div className="col-lg-12">
@@ -18,7 +20,7 @@ export default function FooterModule() {
                   <div className="col-lg-5 text-lg-right mt-4 mt-lg-0">
                     <a
                       href="docs/index.html"
-                      className="btn btn-white btn-icon my-2"
+                      className="btn btn-white btn-icon my-2 mr-2"
                       target="_blank"
                     >
                       <span className="btn-inner--icon">
@@ -41,10 +43,12 @@ export default function FooterModule() {
             <div className="row">
               <div className="col-lg-4 mb-5 mb-lg-0">
                 <a href="index.html">
-                  <img
+                  <Image
                     alt="Image placeholder"
-                    src="img/brand/light.svg"
+                    src="/img/brand/light.svg"
                     id="footer-logo"
+                    width={140}
+                    height={70}
                   />
                 </a>
                 <p className="mt-4 text-sm opacity-8 pr-lg-4">

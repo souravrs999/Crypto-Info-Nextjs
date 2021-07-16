@@ -1,15 +1,13 @@
 export const SEO = {
-    title: "Auticare XR-AI based Assistive Technology learning platform",
+  title: "CryptoInfo: Cryptocurrency Prices and Market Capitalization",
+  description:
+    "Get cryptocurrency prices, market overview, and analysis such as crypto market cap, trading volume, and more.",
+  openGraph: {
+    type: "website",
+    url: process.env.WEBSITE_PRODUCTION_URL,
+    title: "CryptoInfo: Cryptocurrency Prices and Market Capitalization",
     description:
-      "Auticare is an XR-AI based Assistive Technology learning platform for Autism Spectrum Disorder(ASD) and special education.",
-    openGraph: {
-      type: "website",
-      url: process.env.WEBSITE_PRODUCTION_URL,
-      title: "Auticare XR-AI based Assistive Technology learning platform",
-      keywords:
-        "auticare, autism, xr, ai, asd, vr, autilite, autism spectrum disorder",
-      description:
-        "Auticare is an XR-AI based Assistive Technology learning platform for Autism Spectrum Disorder(ASD) and special education.",
-      image: "https://imgur.com/a/WR0m6ry",
-    },
-  };
+      "Get cryptocurrency prices, market overview, and analysis such as crypto market cap, trading volume, and more.",
+    image: "",
+  },
+};

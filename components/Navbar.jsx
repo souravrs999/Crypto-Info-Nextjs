@@ -1,6 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import ThemeToggle from "../components/themes/themeToggle";
+import ThemeToggle from "../components/themes/ThemeToggle";
 import { Search, X } from "react-feather";
 
 export default function NavbarModule() {
@@ -36,10 +37,12 @@ export default function NavbarModule() {
             {/* brand */}
             <Link href="/">
               <a className="navbar-brand order-lg-1">
-                <img
+                <Image
                   alt="crypto info logo image"
                   src="/img/brand/dark.svg"
                   id="navbar-logo"
+                  width={250}
+                  height={100}
                 />
               </a>
             </Link>
@@ -257,11 +260,12 @@ export default function NavbarModule() {
                               <div className="media d-flex">
                                 {/* <!-- SVG icon --> */}
                                 <figure style={{ width: "40px" }}>
-                                  <img
+                                  <Image
                                     alt="Image placeholder"
                                     src="/img/svg/icons/Code_2.svg"
                                     className="img-fluid"
-                                    style={{ height: "40px" }}
+                                    width={40}
+                                    height={40}
                                   />
                                 </figure>
                                 {/* <!-- Media body --> */}
@@ -282,11 +286,12 @@ export default function NavbarModule() {
                               <div className="media d-flex">
                                 {/* <!-- SVG icon --> */}
                                 <figure style={{ width: "40px" }}>
-                                  <img
+                                  <Image
                                     alt="Image placeholder"
                                     src="/img/svg/icons/Like_UI.svg"
                                     className="img-fluid"
-                                    style={{ height: "40px" }}
+                                    width={40}
+                                    height={40}
                                   />
                                 </figure>
                                 {/* <!-- Media body --> */}
@@ -307,11 +312,12 @@ export default function NavbarModule() {
                               <div className="media d-flex align-items-center">
                                 {/* <!-- SVG icon --> */}
                                 <figure style={{ width: "40px" }}>
-                                  <img
+                                  <Image
                                     alt="Image placeholder"
                                     src="/img/svg/icons/Online_Store_2.svg"
                                     className="img-fluid"
-                                    style={{ width: "40px" }}
+                                    width={40}
+                                    height={40}
                                   />
                                 </figure>
                                 {/* <!-- Media body --> */}
@@ -332,11 +338,12 @@ export default function NavbarModule() {
                               <div className="media d-flex align-items-center">
                                 {/* <!-- SVG icon --> */}
                                 <figure style={{ width: "40px" }}>
-                                  <img
+                                  <Image
                                     alt="Image placeholder"
                                     src="/img/svg/icons/Apps.svg"
                                     className="img-fluid"
-                                    style={{ width: "40px" }}
+                                    width={40}
+                                    height={40}
                                   />
                                 </figure>
                                 {/* <!-- Media body --> */}
@@ -359,11 +366,12 @@ export default function NavbarModule() {
                               <div className="media d-flex align-items-center">
                                 {/* <!-- SVG icon --> */}
                                 <figure style={{ width: "40px" }}>
-                                  <img
+                                  <Image
                                     alt="Image placeholder"
                                     src="/img/svg/icons/DOC_File.svg"
                                     className="img-fluid"
-                                    style={{ width: "40px" }}
+                                    width={40}
+                                    height={40}
                                   />
                                 </figure>
                                 {/* <!-- Media body --> */}
@@ -384,11 +392,12 @@ export default function NavbarModule() {
                               <div className="media d-flex align-items-center">
                                 {/* <!-- SVG icon --> */}
                                 <figure style={{ width: "40px" }}>
-                                  <img
+                                  <Image
                                     alt="Image placeholder"
                                     src="/img/svg/icons/Package_Opened.svg"
                                     className="img-fluid"
-                                    style={{ width: "40px" }}
+                                    width={40}
+                                    height={40}
                                   />
                                 </figure>
                                 {/* <!-- Media body --> */}
@@ -444,11 +453,12 @@ export default function NavbarModule() {
                           <div className="d-flex">
                             {/* <!-- SVG icon --> */}
                             <figure style={{ width: "20px" }}>
-                              <img
+                              <Image
                                 alt="Image placeholder"
                                 src="/img/svg/icons/Code.svg"
                                 className="svg-inject img-fluid"
-                                style={{ height: "20px" }}
+                                width={40}
+                                height={40}
                               />
                             </figure>
                             {/* <!-- Media body --> */}
@@ -549,11 +559,12 @@ export default function NavbarModule() {
                           <div className="d-flex">
                             {/* <!-- SVG icon --> */}
                             <figure style={{ width: "20px" }}>
-                              <img
+                              <Image
                                 alt="Image placeholder"
                                 src="/img/svg/icons/Code.svg"
                                 className="svg-inject img-fluid"
-                                style={{ height: "20px" }}
+                                width={40}
+                                height={40}
                               />
                             </figure>
                             {/* <!-- Media body --> */}
@@ -662,11 +673,12 @@ export default function NavbarModule() {
                           <div className="d-flex">
                             {/* <!-- SVG icon --> */}
                             <figure style={{ width: "20px" }}>
-                              <img
+                              <Image
                                 alt="Image placeholder"
                                 src="/img/svg/icons/Code.svg"
                                 className="svg-inject img-fluid"
-                                style={{ height: "20px" }}
+                                width={40}
+                                height={40}
                               />
                             </figure>
                             {/* <!-- Media body --> */}
@@ -727,11 +739,12 @@ export default function NavbarModule() {
                           <div className="d-flex">
                             {/* <!-- SVG icon --> */}
                             <figure style={{ width: "20px" }}>
-                              <img
+                              <Image
                                 alt="Image placeholder"
                                 src="/img/svg/icons/Cog_Wheels.svg"
                                 className="svg-inject img-fluid"
-                                style={{ height: "20px" }}
+                                width={40}
+                                height={40}
                               />
                             </figure>
                             {/* <!-- Media body --> */}
@@ -822,11 +835,12 @@ export default function NavbarModule() {
                           <div className="media d-flex">
                             {/* <!-- SVG icon --> */}
                             <figure style={{ width: "20px" }}>
-                              <img
+                              <Image
                                 alt="Image placeholder"
                                 src="/img/svg/icons/Secure_Files.svg"
                                 className="svg-inject img-fluid"
-                                style={{ height: "20px" }}
+                                width={40}
+                                height={40}
                               />
                             </figure>
                             {/* <!-- Media body --> */}
@@ -921,17 +935,20 @@ export default function NavbarModule() {
                           <div className="media d-flex">
                             {/* <!-- SVG icon --> */}
                             <figure style={{ width: "20px" }}>
-                              <img
+                              <Image
                                 alt="Image placeholder"
                                 src="/img/svg/icons/Task.svg"
                                 className="svg-inject img-fluid"
-                                style={{ height: "20px" }}
+                                width={40}
+                                height={40}
                               />
                             </figure>
                             {/* <!-- Media body --> */}
                             <div className="media-body ml-2">
                               <h6 className="heading mb-0">Account</h6>
-                              <p className="mb-0">Account management made cool.</p>
+                              <p className="mb-0">
+                                Account management made cool.
+                              </p>
                             </div>
                           </div>
                         </a>
@@ -1002,17 +1019,20 @@ export default function NavbarModule() {
                           <div className="media d-flex">
                             {/* <!-- SVG icon --> */}
                             <figure style={{ width: "20px" }}>
-                              <img
+                              <Image
                                 alt="Image placeholder"
                                 src="/img/svg/icons/Task.svg"
                                 className="svg-inject img-fluid"
-                                style={{ height: "20px" }}
+                                width={40}
+                                height={40}
                               />
                             </figure>
                             {/* <!-- Media body --> */}
                             <div className="media-body ml-2">
                               <h6 className="heading mb-0">Boards</h6>
-                              <p className="mb-0">Account management made cool.</p>
+                              <p className="mb-0">
+                                Account management made cool.
+                              </p>
                             </div>
                           </div>
                         </a>
@@ -1343,9 +1363,11 @@ export default function NavbarModule() {
                 data-toggle="modal"
               >
                 <span className="avatar rounded-circle">
-                  <img
+                  <Image
                     alt="Image placeholder"
                     src="/img/theme/light/person-auth.jpg"
+                    width={60}
+                    height={60}
                   />
                 </span>
               </a>

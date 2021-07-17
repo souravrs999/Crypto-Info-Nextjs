@@ -6,10 +6,10 @@ import { useEffect, useCallback } from "react";
 import RecursiveTimeout from "./utils/recursiveTimeout";
 import CoinCardContent from "./CoinCardContent";
 
-const AUTOPLAY_INTERVAL = 5000;
+const AUTOPLAY_INTERVAL = 4000;
 
 export default function JumbotronCoins({ coins }) {
-  const [emblaRef, embla] = useEmblaCarousel({ loop: true, skipSnaps: false });
+  const [emblaRef, embla] = useEmblaCarousel({ loop: true, skipSnaps: true });
 
   const autoplay = useCallback(() => {
     if (!embla) return;

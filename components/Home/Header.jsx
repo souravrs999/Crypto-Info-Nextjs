@@ -24,14 +24,14 @@ export default function Header() {
               <div className="mt-5">
                 <a
                   href="https://themes.getbootstrap.com/product/quick-website-ui-kit-2/"
-                  className="btn btn-primary btn-icon d-none d-lg-inline-block"
+                  className="btn btn-primary btn-icon d-lg-inline-block"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Crypto Markets
+                  Exchanges
                 </a>
                 <a href="index.html#" className="btn btn-white btn-icon">
-                  <span className="btn-inner--text">Trending Coins</span>
+                  <span className="btn-inner--text">Coins</span>
                   <span className="btn-inner--icon">
                     <i data-feather="arrow-right"></i>
                   </span>
@@ -47,7 +47,7 @@ export default function Header() {
                     width={1000}
                     height={1000}
                     layout="responsive"
-                    src="/img/crypto-around-world-light.png"
+                    src="/img/home/crypto-around-world-light.png"
                     className="img-fluid mw-lg-120 rounded-top zindex-100"
                   />
                 </figure>

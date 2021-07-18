@@ -39,7 +39,7 @@ export default function Coins(props) {
           nextLinkClassName={"page-link"}
           previousLinkClassName={"page-link"}
           // logic
-          initialPage={1}
+          initialPage={0}
           pageCount={props.totalPageCount} //page count
           marginPagesDisplayed={3}
           pageRangeDisplayed={2}
@@ -52,14 +52,13 @@ export default function Coins(props) {
 
 export const getServerSideProps = async (ctx) => {
   const page = ctx.query.page || 1;
-  const globalData = await (
-    await fetch(`${process.env.COINGECKO_API_BASE_URL}global`)
-  ).json();
-  const coinData = await (
-    await fetch(
+
+  const [globalData, coinData] = await Promise.all([
+    fetch(`${process.env.COINGECKO_API_BASE_URL}global`).then((r) => r.json()),
+    fetch(
       `${process.env.COINGECKO_API_BASE_URL}coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=${page}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`
-    )
-  ).json();
+    ).then((r) => r.json()),
+  ]);
 
   return {
     props: {
@@ -69,4 +68,3 @@ export const getServerSideProps = async (ctx) => {
     },
   };
 };
-

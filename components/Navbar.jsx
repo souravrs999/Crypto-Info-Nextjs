@@ -84,7 +84,7 @@ export default function NavbarModule() {
                   className="nav-item nav-item-spaced dropdown dropdown-animate"
                   data-toggle="hover"
                 >
-                  <Link href="/coins">
+                  <Link href={{ pathname: "/coins", query: { page: 1 } }}>
                     <a className="nav-link">Coins</a>
                   </Link>
                 </li>

@@ -24314,7 +24314,7 @@ section.slice {
 }
 .table-cards tbody tr td,
 .table-cards tbody tr th {
-  background-color: #fff;
+  background-color: var(--color-card-bg-primary);
 }
 .table-cards.table-hover tbody > tr:hover td,
 .table-cards.table-hover tbody > tr:hover th {
@@ -26547,4 +26547,7 @@ display: flex;
 }
 .pointer {
   cursor: pointer;
+}
+.tdata {
+  background: var(--color-card-bg-primary) !important;
 }

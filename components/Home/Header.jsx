@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import Credits from "./Credits";
 
@@ -30,12 +31,14 @@ export default function Header() {
                 >
                   Exchanges
                 </a>
-                <a href="index.html#" className="btn btn-white btn-icon">
-                  <span className="btn-inner--text">Coins</span>
-                  <span className="btn-inner--icon">
-                    <i data-feather="arrow-right"></i>
-                  </span>
-                </a>
+                <Link href={{ pathname: "/coins", query: { page: 1 } }}>
+                  <a className="btn btn-white btn-icon">
+                    <span className="btn-inner--text">Coins</span>
+                    <span className="btn-inner--icon">
+                      <i data-feather="arrow-right"></i>
+                    </span>
+                  </a>
+                </Link>
               </div>
               <Credits />
             </div>

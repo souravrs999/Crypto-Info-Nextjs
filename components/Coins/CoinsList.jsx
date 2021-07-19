@@ -44,7 +44,13 @@ export default function CoinList({ coinList }) {
             </td>
             {/* coin 1h change percentage */}
             <td className="tdata">
-              <h5 className="h6">
+              <h5
+                className={`h6 ${
+                  coin.price_change_percentage_1h_in_currency > 0
+                    ? "text-success"
+                    : "text-danger"
+                }`}
+              >
                 {coin.price_change_percentage_1h_in_currency === null
                   ? "NaN"
                   : coin.price_change_percentage_1h_in_currency.toFixed(2) +
@@ -53,7 +59,13 @@ export default function CoinList({ coinList }) {
             </td>
             {/* coin 24h change percentage */}
             <td className="tdata">
-              <h5 className="h6">
+              <h5
+                className={`h6 ${
+                  coin.price_change_percentage_24h_in_currency > 0
+                    ? "text-success"
+                    : "text-danger"
+                }`}
+              >
                 {coin.price_change_percentage_24h_in_currency === null
                   ? "NaN"
                   : coin.price_change_percentage_24h_in_currency.toFixed(2) +
@@ -62,7 +74,13 @@ export default function CoinList({ coinList }) {
             </td>
             {/* coin 7d change percentage */}
             <td className="tdata">
-              <h5 className="h6">
+              <h5
+                className={`h6 ${
+                  coin.price_change_percentage_7d_in_currency > 0
+                    ? "text-success"
+                    : "text-danger"
+                }`}
+              >
                 {coin.price_change_percentage_7d_in_currency === null
                   ? "NaN"
                   : coin.price_change_percentage_7d_in_currency.toFixed(2) +

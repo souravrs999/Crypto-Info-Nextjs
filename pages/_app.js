@@ -1,25 +1,31 @@
 import { useEffect } from "react";
-import { useRouter } from "next/router";
+import Router from "next/router";
+import ProgressBar from "@badrap/bar-of-progress";
 
-// Style imports
 import "../styles/globals.css";
-
-// Layout module
 import LayoutModule from "../layout/Layout";
-
 import * as gtag from "../lib/gtag";
 
+const progress = new ProgressBar({
+  size: 3,
+  className: "bar-of-progress",
+  delay: 10,
+});
+
+Router.events.on("routeChangeStart", progress.start);
+Router.events.on("routeChangeComplete", progress.finish);
+Router.events.on("routeChangeError", progress.finish);
+
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url);
     };
-    router.events.on("routeChangeComplete", handleRouteChange);
+    Router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
+      Router.events.off("routeChangeComplete", handleRouteChange);
     };
-  }, [router.events]);
+  }, [Router.events]);
   return (
     <LayoutModule>
       <Component {...pageProps} />

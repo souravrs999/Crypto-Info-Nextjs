@@ -26551,3 +26551,24 @@ display: flex;
 .tdata {
   background: var(--color-card-bg-primary) !important;
 }
+.bar-of-progress {
+  z-index: 5;
+}
+.center {
+  position: relative;
+  width: 300px;
+}
+.loader svg {
+	max-width: 25em;
+	border-radius: 3px;
+	background: transparent;
+	fill: none;
+	stroke: #222;
+	stroke-linecap: round;
+	stroke-width: 8%
+}
+.loader use {
+	stroke: #008aff;
+	animation: a 2s linear infinite
+}
+@keyframes a { to { stroke-dashoffset: 0px } }

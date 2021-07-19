@@ -75,7 +75,9 @@ export default function NavbarModule() {
                 {/* <!-- Overview --> */}
                 <li className="nav-item nav-item-spaced d-none d-lg-block">
                   <Link href="/">
-                    <a className="nav-link">Home</a>
+                    <a className="nav-link" onClick={() => setCollapsed(true)}>
+                      Home
+                    </a>
                   </Link>
                 </li>
 
@@ -85,7 +87,9 @@ export default function NavbarModule() {
                   data-toggle="hover"
                 >
                   <Link href={{ pathname: "/coins", query: { page: 1 } }}>
-                    <a className="nav-link">Coins</a>
+                    <a className="nav-link" onClick={() => setCollapsed(true)}>
+                      Coins
+                    </a>
                   </Link>
                 </li>
 

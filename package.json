@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.1.2",
     "bootstrap": "^5.0.0-beta3",
     "chart.js": "^3.4.1",
     "embla-carousel": "^4.5.3",

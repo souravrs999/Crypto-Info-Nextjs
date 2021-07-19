@@ -1,7 +1,8 @@
-import MarketCaps from "../../components/Coins/MarketCaps";
-import CoinList from "../../components/Coins/CoinsList";
 import ReactPaginate from "react-paginate";
 import { useRouter } from "next/router";
+
+import MarketCaps from "../../components/Coins/MarketCaps";
+import CoinList from "../../components/Coins/CoinsList";
 
 export default function Coins(props) {
   const router = useRouter();

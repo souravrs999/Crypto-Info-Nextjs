@@ -4467,7 +4467,7 @@ input[type="submit"].btn-block {
 .card-footer {
   padding: 1.25rem 1.75rem;
   background-color: transparent;
-  border-top: 1px solid #eaecf3;
+  /* border-top: 1px solid #eaecf3; */
 }
 .card-footer:last-child {
   border-radius: 0 0 calc(0.75rem - 1px) calc(0.75rem - 1px);
@@ -5168,7 +5168,7 @@ a.badge-white:focus {
   position: relative;
   display: block;
   padding: 1rem 1.5rem;
-  background-color: #fff;
+  background-color: var(--color-card-bg-primary);
   border: 1px solid #eaecf3;
 }
 .list-group-item:first-child {

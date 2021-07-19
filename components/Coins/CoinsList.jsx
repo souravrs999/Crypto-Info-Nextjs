@@ -52,7 +52,7 @@ export default function CoinList({ coinList }) {
                 }`}
               >
                 {coin.price_change_percentage_1h_in_currency === null
-                  ? "NaN"
+                  ? "-"
                   : coin.price_change_percentage_1h_in_currency.toFixed(2) +
                     "%"}
               </h5>
@@ -67,7 +67,7 @@ export default function CoinList({ coinList }) {
                 }`}
               >
                 {coin.price_change_percentage_24h_in_currency === null
-                  ? "NaN"
+                  ? "-"
                   : coin.price_change_percentage_24h_in_currency.toFixed(2) +
                     "%"}
               </h5>
@@ -82,7 +82,7 @@ export default function CoinList({ coinList }) {
                 }`}
               >
                 {coin.price_change_percentage_7d_in_currency === null
-                  ? "NaN"
+                  ? "-"
                   : coin.price_change_percentage_7d_in_currency.toFixed(2) +
                     "%"}
               </h5>

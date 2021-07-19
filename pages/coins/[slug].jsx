@@ -6,17 +6,17 @@ import CoinSecondDataBlock from "../../components/Coins/CoinSecondDataBlock";
 const CoinDetails = (props) => {
   return (
     <>
-      <section class="slice slice-sm">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-9">
+      <section className="slice slice-sm">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-9">
               <div>
-                <div class="row align-items-center mb-3">
-                  <div class="col">
-                    <h6 class="mb-0">Coin Stats</h6>
+                <div className="row align-items-center mb-3">
+                  <div className="col">
+                    <h6 className="mb-0">Coin Stats</h6>
                   </div>
                 </div>
-                <div class="row">
+                <div className="row">
                   {/* first block */}
                   <CoinFirstDataBlock
                     coinName={props.coinData.name}
@@ -53,36 +53,36 @@ const CoinDetails = (props) => {
                 </div>
               </div>
               {/* third block */}
-              <div class="row mb-4">
-                {/* <div class="col-md-6">
-                  <div class="card">
-                    <div class="card-header">
+              <div className="row mb-4">
+                {/* <div className="col-md-6">
+                  <div className="card">
+                    <div className="card-header">
                       <h6>Messages</h6>
                     </div>
-                    <div class="list-group list-group-flush">
+                    <div className="list-group list-group-flush">
                       <a
                         href="profile.html#"
-                        class="list-group-item list-group-item-action"
+                        className="list-group-item list-group-item-action"
                       >
                         <div
-                          class="d-flex align-items-center"
+                          className="d-flex align-items-center"
                           data-title="2 hrs ago"
                         >
                           <div>
                             <img
                               alt="Image placeholder"
                               src="/img/theme/light/person-1.jpg"
-                              class="avatar rounded-circle"
+                              className="avatar rounded-circle"
                             />
                           </div>
-                          <div class="flex-fill ml-3">
-                            <div class="h6 text-sm mb-0">
+                          <div className="flex-fill ml-3">
+                            <div className="h6 text-sm mb-0">
                               Alex Michael{" "}
-                              <small class="float-right text-muted">
+                              <small className="float-right text-muted">
                                 2 hrs ago
                               </small>
                             </div>
-                            <p class="text-sm lh-140 mb-0">
+                            <p className="text-sm lh-140 mb-0">
                               Some quick example text to build on the card
                               title.
                             </p>
@@ -91,27 +91,27 @@ const CoinDetails = (props) => {
                       </a>
                       <a
                         href="profile.html#"
-                        class="list-group-item list-group-item-action"
+                        className="list-group-item list-group-item-action"
                       >
                         <div
-                          class="d-flex align-items-center"
+                          className="d-flex align-items-center"
                           data-title="2 hrs ago"
                         >
                           <div>
                             <img
                               alt="Image placeholder"
                               src="/img/theme/light/person-2.jpg"
-                              class="avatar rounded-circle"
+                              className="avatar rounded-circle"
                             />
                           </div>
-                          <div class="flex-fill ml-3">
-                            <div class="h6 text-sm mb-0">
+                          <div className="flex-fill ml-3">
+                            <div className="h6 text-sm mb-0">
                               Alex Michael{" "}
-                              <small class="float-right text-muted">
+                              <small className="float-right text-muted">
                                 2 hrs ago
                               </small>
                             </div>
-                            <p class="text-sm lh-140 mb-0">
+                            <p className="text-sm lh-140 mb-0">
                               Some quick example text to build on the card
                               title.
                             </p>
@@ -120,27 +120,27 @@ const CoinDetails = (props) => {
                       </a>
                       <a
                         href="profile.html#"
-                        class="list-group-item list-group-item-action"
+                        className="list-group-item list-group-item-action"
                       >
                         <div
-                          class="d-flex align-items-center"
+                          className="d-flex align-items-center"
                           data-title="2 hrs ago"
                         >
                           <div>
                             <img
                               alt="Image placeholder"
                               src="/img/theme/light/person-3.jpg"
-                              class="avatar rounded-circle"
+                              className="avatar rounded-circle"
                             />
                           </div>
-                          <div class="flex-fill ml-3">
-                            <div class="h6 text-sm mb-0">
+                          <div className="flex-fill ml-3">
+                            <div className="h6 text-sm mb-0">
                               Alex Michael{" "}
-                              <small class="float-right text-muted">
+                              <small className="float-right text-muted">
                                 2 hrs ago
                               </small>
                             </div>
-                            <p class="text-sm lh-140 mb-0">
+                            <p className="text-sm lh-140 mb-0">
                               Some quick example text to build on the card
                               title.
                             </p>
@@ -149,27 +149,27 @@ const CoinDetails = (props) => {
                       </a>
                       <a
                         href="profile.html#"
-                        class="list-group-item list-group-item-action"
+                        className="list-group-item list-group-item-action"
                       >
                         <div
-                          class="d-flex align-items-center"
+                          className="d-flex align-items-center"
                           data-title="2 hrs ago"
                         >
                           <div>
                             <img
                               alt="Image placeholder"
                               src="/img/theme/light/person-4.jpg"
-                              class="avatar rounded-circle"
+                              className="avatar rounded-circle"
                             />
                           </div>
-                          <div class="flex-fill ml-3">
-                            <div class="h6 text-sm mb-0">
+                          <div className="flex-fill ml-3">
+                            <div className="h6 text-sm mb-0">
                               Alex Michael{" "}
-                              <small class="float-right text-muted">
+                              <small className="float-right text-muted">
                                 2 hrs ago
                               </small>
                             </div>
-                            <p class="text-sm lh-140 mb-0">
+                            <p className="text-sm lh-140 mb-0">
                               Some quick example text to build on the card
                               title.
                             </p>
@@ -177,34 +177,34 @@ const CoinDetails = (props) => {
                         </div>
                       </a>
                     </div>
-                    <div class="card-footer py-3 text-center border-0 position-relative">
+                    <div className="card-footer py-3 text-center border-0 position-relative">
                       <a
                         href="profile.html#"
-                        class="text-xs ls-1 text-uppercase font-weight-bold stretched-link"
+                        className="text-xs ls-1 text-uppercase font-weight-bold stretched-link"
                       >
                         See all
                       </a>
                     </div>
                   </div>
                 </div> */}
-                {/* <div class="col-md-6">
-                  <div class="card">
-                    <div class="card-header">
+                {/* <div className="col-md-6">
+                  <div className="card">
+                    <div className="card-header">
                       <h6>Alerts</h6>
                     </div>
-                    <div class="list-group list-group-flush">
+                    <div className="list-group list-group-flush">
                       <a
                         href="profile.html#"
-                        class="list-group-item list-group-item-action border-0 py-2"
+                        className="list-group-item list-group-item-action border-0 py-2"
                       >
-                        <div class="d-flex">
+                        <div className="d-flex">
                           <div>
-                            <i class="mr-3"></i>
+                            <i className="mr-3"></i>
                           </div>
                           <div>
-                            <div class="text-sm lh-150">
+                            <div className="text-sm lh-150">
                               Mail sent to{" "}
-                              <span class="text-dark font-weight-bold">
+                              <span className="text-dark font-weight-bold">
                                 Alex Michael
                               </span>
                             </div>
@@ -213,16 +213,16 @@ const CoinDetails = (props) => {
                       </a>
                       <a
                         href="profile.html#"
-                        class="list-group-item list-group-item-action border-0 py-2"
+                        className="list-group-item list-group-item-action border-0 py-2"
                       >
-                        <div class="d-flex">
+                        <div className="d-flex">
                           <div>
-                            <i class="mr-3"></i>
+                            <i className="mr-3"></i>
                           </div>
                           <div>
-                            <div class="text-sm lh-150">
+                            <div className="text-sm lh-150">
                               You liked a comment from{" "}
-                              <span class="text-dark font-weight-bold">
+                              <span className="text-dark font-weight-bold">
                                 Sandra Wayne
                               </span>
                             </div>
@@ -231,16 +231,16 @@ const CoinDetails = (props) => {
                       </a>
                       <a
                         href="profile.html#"
-                        class="list-group-item list-group-item-action border-0 py-2"
+                        className="list-group-item list-group-item-action border-0 py-2"
                       >
-                        <div class="d-flex">
+                        <div className="d-flex">
                           <div>
-                            <i class="mr-3"></i>
+                            <i className="mr-3"></i>
                           </div>
                           <div>
-                            <div class="text-sm lh-150">
+                            <div className="text-sm lh-150">
                               New likes from{" "}
-                              <span class="text-dark font-weight-bold">
+                              <span className="text-dark font-weight-bold">
                                 Jason Miller
                               </span>
                             </div>
@@ -249,16 +249,16 @@ const CoinDetails = (props) => {
                       </a>
                       <a
                         href="profile.html#"
-                        class="list-group-item list-group-item-action border-0 py-2"
+                        className="list-group-item list-group-item-action border-0 py-2"
                       >
-                        <div class="d-flex">
+                        <div className="d-flex">
                           <div>
-                            <i class="mr-3"></i>
+                            <i className="mr-3"></i>
                           </div>
                           <div>
-                            <div class="text-sm lh-150">
+                            <div className="text-sm lh-150">
                               You are now in team with{" "}
-                              <span class="text-dark font-weight-bold">
+                              <span className="text-dark font-weight-bold">
                                 Mike Thomson
                               </span>
                             </div>
@@ -267,16 +267,16 @@ const CoinDetails = (props) => {
                       </a>
                       <a
                         href="profile.html#"
-                        class="list-group-item list-group-item-action border-0 py-2"
+                        className="list-group-item list-group-item-action border-0 py-2"
                       >
-                        <div class="d-flex">
+                        <div className="d-flex">
                           <div>
-                            <i class="mr-3"></i>
+                            <i className="mr-3"></i>
                           </div>
                           <div>
-                            <div class="text-sm lh-150">
+                            <div className="text-sm lh-150">
                               Mail sent to{" "}
-                              <span class="text-dark font-weight-bold">
+                              <span className="text-dark font-weight-bold">
                                 Richard Nixon
                               </span>
                             </div>
@@ -284,42 +284,42 @@ const CoinDetails = (props) => {
                         </div>
                       </a>
                     </div>
-                    <div class="card-footer py-3 text-center mt-3 position-relative">
+                    <div className="card-footer py-3 text-center mt-3 position-relative">
                       <a
                         href="profile.html#"
-                        class="text-xs ls-1 text-uppercase font-weight-bold stretched-link"
+                        className="text-xs ls-1 text-uppercase font-weight-bold stretched-link"
                       >
                         See all
                       </a>
                     </div>
                   </div>
-                  <div class="card mb-0">
-                    <div class="card-header">
-                      <div class="d-flex justify-content-between align-items-center">
+                  <div className="card mb-0">
+                    <div className="card-header">
+                      <div className="d-flex justify-content-between align-items-center">
                         <div>
-                          <span class="h6">Reminder</span>
+                          <span className="h6">Reminder</span>
                         </div>
-                        <div class="text-right">
-                          <span class="h6 font-weight-light text-muted">
+                        <div className="text-right">
+                          <span className="h6 font-weight-light text-muted">
                             23 May, 2019
                           </span>
                         </div>
                       </div>
                     </div>
-                    <div class="card-body py-3">
-                      <div class="d-flex align-items-center">
-                        <div class="">
-                          <div class="icon icon-shape bg-warning">
-                            <i class="fas fa-calendar-day text-white"></i>
+                    <div className="card-body py-3">
+                      <div className="d-flex align-items-center">
+                        <div className="">
+                          <div className="icon icon-shape bg-warning">
+                            <i className="fas fa-calendar-day text-white"></i>
                           </div>
                         </div>
-                        <div class="pl-3">
-                          <h6 class="text-warning mb-0">Chat with Dave</h6>
+                        <div className="pl-3">
+                          <h6 className="text-warning mb-0">Chat with Dave</h6>
                         </div>
-                        <div class="ml-auto text-right">
+                        <div className="ml-auto text-right">
                           <a
                             href="profile.html#"
-                            class="text-warning text-sm text-underline--dashed"
+                            className="text-warning text-sm text-underline--dashed"
                           >
                             See all events
                           </a>
@@ -337,21 +337,21 @@ const CoinDetails = (props) => {
   );
 };
 
-export const getStaticPaths = async () => {
-  const coins = await fetch(
-    `${process.env.COINGECKO_API_BASE_URL}/coins/list`
-  ).then((r) => r.json());
-  return {
-    paths: coins.map((coin) => ({
-      params: {
-        slug: String(coin.id),
-      },
-    })),
-    fallback: false,
-  };
-};
+// export const getStaticPaths = async () => {
+//   const coins = await fetch(
+//     `${process.env.COINGECKO_API_BASE_URL}/coins/list`
+//   ).then((r) => r.json());
+//   return {
+//     paths: coins.map((coin) => ({
+//       params: {
+//         slug: String(coin.id),
+//       },
+//     })),
+//     fallback: false,
+//   };
+// };
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const coinData = await fetch(
     `${process.env.COINGECKO_API_BASE_URL}/coins/${params.slug}`
   ).then((r) => r.json());
@@ -359,7 +359,6 @@ export const getStaticProps = async ({ params }) => {
     props: {
       coinData: coinData,
     },
-    revalidate: 2,
   };
 };
 

@@ -35,7 +35,6 @@ const CoinCardContent = (props) => {
           mktData={props.mktData}
           chngPrcnt={props.chngPrcnt}
           height={50}
-          width={200}
           config={WithoutAxesConfig}
           pointRadius={0}
         />

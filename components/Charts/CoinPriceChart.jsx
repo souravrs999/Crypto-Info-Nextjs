@@ -41,7 +41,7 @@ const CoinPriceChart = (props) => {
   return (
     <div
       className="chart-container"
-      style={{ width: props.width, height: props.height }}
+      style={{ width: "100%", height: props.height }}
     >
       <Line data={data} options={props.config} />
     </div>

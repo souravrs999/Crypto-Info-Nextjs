@@ -9,7 +9,6 @@ const CoinDetails = (props) => {
   return (
     <>
       <section className="slice slice-sm">
-        {console.log(props)}
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-9">

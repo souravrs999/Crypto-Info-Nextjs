@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Meta from "./Meta";
 
-export default function HeaderModule() {
+const HeaderModule = () => {
   return (
     <>
       <Meta />
@@ -115,4 +115,6 @@ export default function HeaderModule() {
       </Head>
     </>
   );
-}
+};
+
+export default HeaderModule;

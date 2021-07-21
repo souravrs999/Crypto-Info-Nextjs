@@ -2,7 +2,8 @@ import ReactPaginate from "react-paginate";
 import { useRouter } from "next/router";
 
 import MarketCaps from "../../components/Coins/MarketCaps";
-import CoinList from "../../components/Coins/CoinsList";
+import CoinList from "../../components/Coins/CoinSummary/CoinsList";
+import coinGecko from "../api/coinGecko";
 
 export default function Coins(props) {
   const router = useRouter();
@@ -22,9 +23,9 @@ export default function Coins(props) {
     <section className="slice py-5">
       <div className="container">
         {/* Market capitalization data section */}
-        <MarketCaps _globalData={props.globalData} />
+        <MarketCaps _gD={props._gD} />
         {/* Coins list section */}
-        <CoinList coinList={props.coinData} />
+        <CoinList _cD={props._cD} />
         <ReactPaginate
           // customization
           previousLabel={"Previous"}
@@ -41,8 +42,8 @@ export default function Coins(props) {
           previousLinkClassName={"page-link"}
           // logic
           initialPage={0}
-          pageCount={props.totalPageCount} //page count
-          marginPagesDisplayed={3}
+          pageCount={props._tPC} //page count
+          marginPagesDisplayed={2}
           pageRangeDisplayed={2}
           onPageChange={pagginationHandler}
         />
@@ -54,18 +55,27 @@ export default function Coins(props) {
 export const getServerSideProps = async (ctx) => {
   const page = ctx.query.page || 1;
 
-  const [globalData, coinData] = await Promise.all([
-    fetch(`${process.env.COINGECKO_API_BASE_URL}/global`).then((r) => r.json()),
-    fetch(
-      `${process.env.COINGECKO_API_BASE_URL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=${page}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`
-    ).then((r) => r.json()),
+  const [_gD, _cD] = await Promise.all([
+    coinGecko.get(`/global`).then((r) => r.data),
+    coinGecko
+      .get(`/coins/markets`, {
+        params: {
+          vs_currency: "usd",
+          order: "market_cap_desc",
+          per_page: 100,
+          page: page,
+          sparkline: false,
+          price_change_percentage: "1h,24h,7d",
+        },
+      })
+      .then((r) => r.data),
   ]);
 
   return {
     props: {
-      globalData: globalData,
-      coinData: coinData,
-      totalPageCount: Math.ceil(globalData.data.active_cryptocurrencies / 100),
+      _gD: _gD,
+      _cD: _cD,
+      _tPC: Math.ceil(_gD.data.active_cryptocurrencies / 100),
     },
   };
 };

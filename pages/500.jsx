@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Home, ArrowLeft } from "react-feather";
 
-export default function Error() {
+const Error = () => {
   const [hover, setHover] = useState(false);
   return (
     <>
@@ -61,3 +61,5 @@ export default function Error() {
     </>
   );
 }
+
+export default Error;

@@ -6,7 +6,7 @@ import {
   BarChart2,
 } from "react-feather";
 
-import { CurrencyFormatter } from "./utils/CurrFormatter";
+import { CurrencyFormatter } from "../utils/CurrFormatter";
 
 const CoinSecondDataBlock = (props) => {
   return (

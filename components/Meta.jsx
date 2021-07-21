@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { SEO } from "../utils/seo-config";
 
-export default function Meta() {
+const Meta = () => {
   return (
     <Head>
       <meta
@@ -18,4 +18,6 @@ export default function Meta() {
       <meta name="og:image" content={SEO.openGraph.image} />
     </Head>
   );
-}
+};
+
+export default Meta;

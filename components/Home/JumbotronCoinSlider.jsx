@@ -8,7 +8,7 @@ import CoinCardContent from "./CoinCardContent";
 
 const AUTOPLAY_INTERVAL = 4000;
 
-export default function JumbotronCoins({ coins }) {
+const JumbotronCoins = (props) => {
   const [emblaRef, embla] = useEmblaCarousel({ loop: true, skipSnaps: true });
 
   const autoplay = useCallback(() => {
@@ -32,21 +32,19 @@ export default function JumbotronCoins({ coins }) {
         <div className="container position-relative zindex-100">
           <div className="embla" ref={emblaRef}>
             <div className="embla__container">
-              {coins.map((coin) => (
+              {props.coins.map((coin) => (
                 <div
                   className="col-lg-3 col-sm-6 embla__slide"
-                  key={coin._topCoin.coingecko_rank}
+                  key={coin._tC.coingecko_rank}
                 >
                   <div className="card mb-3">
-                    {/* card body */}
                     <div className="card-body pt-3">
-                      {/* card logo */}
                       <div className="d-flex justify-content-between align-items-center">
                         <div>
                           <div className="icon icon-sm">
                             <Image
                               alt="Image placeholder"
-                              src={coin._topCoin.image.small}
+                              src={coin._tC.image.small}
                               className="svg-inject"
                               height={50}
                               width={50}
@@ -60,7 +58,7 @@ export default function JumbotronCoins({ coins }) {
                             </div>
                             <div className="pl-2">
                               <small className="h6 text-xs text-success">
-                                {coin._topCoin.market_data.current_price.usd}
+                                {coin._tC.market_data.current_price.usd}
                               </small>
                             </div>
                           </div>
@@ -68,12 +66,11 @@ export default function JumbotronCoins({ coins }) {
                       </div>
 
                       <CoinCardContent
-                        coinName={coin._topCoin.name}
+                        coinName={coin._tC.name}
                         chngPrcnt={
-                          coin._topCoin.market_data
-                            .market_cap_change_percentage_24h
+                          coin._tC.market_data.market_cap_change_percentage_24h
                         }
-                        mktData={coin._mktCap}
+                        mktData={coin._mC}
                       />
                     </div>
                   </div>
@@ -85,4 +82,6 @@ export default function JumbotronCoins({ coins }) {
       </section>
     </>
   );
-}
+};
+
+export default JumbotronCoins;

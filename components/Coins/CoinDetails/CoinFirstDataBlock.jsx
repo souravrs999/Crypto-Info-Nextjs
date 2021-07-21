@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { CurrencyFormatter } from "./utils/CurrFormatter";
+import { CurrencyFormatter } from "../utils/CurrFormatter";
 
 const CoinFirstDataBlock = (props) => {
   return (

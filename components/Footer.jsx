@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function FooterModule() {
+const FooterModule = () => {
   return (
     <>
       <footer className="position-relative" id="footer-main">
@@ -164,4 +164,6 @@ export default function FooterModule() {
       </footer>
     </>
   );
-}
+};
+
+export default FooterModule;

@@ -11,7 +11,7 @@ import {
   ThumbsUp,
 } from "react-feather";
 
-export default function MidContentTileSection({ noCoins, nftImage }) {
+const MidContentTileSection = ({ noCoins }) => {
   return (
     <section className="slice">
       <div className="container position-relative zindex-100">
@@ -215,7 +215,7 @@ export default function MidContentTileSection({ noCoins, nftImage }) {
                         <div className="d-flex align-items-center">
                           <div>
                             <span className="badge badge-xs badge-circle rounded-circle badge-success">
-                              <Check size={15}/>
+                              <Check size={15} />
                             </span>
                           </div>
                           <div className="pl-2">
@@ -301,4 +301,6 @@ export default function MidContentTileSection({ noCoins, nftImage }) {
       </div>
     </section>
   );
-}
+};
+
+export default MidContentTileSection;

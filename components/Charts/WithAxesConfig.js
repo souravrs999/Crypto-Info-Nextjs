@@ -1,7 +1,7 @@
-export const historyOptions = {
+export const WithAxesConfig = {
   plugins: {
     legend: {
-      display: false,
+      display: true,
     },
   },
   lineHeightAnnotation: {
@@ -15,7 +15,7 @@ export const historyOptions = {
   maintainAspectRatio: false,
   responsive: true,
   scales: {
-    x: { display: false },
-    y: { display: false },
+    x: { display: true },
+    y: { display: true },
   },
 };

@@ -4,9 +4,8 @@ import { useState } from "react";
 import ThemeToggle from "../components/themes/ThemeToggle";
 import { Search, X } from "react-feather";
 
-export default function NavbarModule() {
+const NavbarModule = () => {
   const [collapsed, setCollapsed] = useState(true);
-  const [searchDrop, setSearchDrop] = useState(false);
 
   return (
     <>
@@ -73,7 +72,7 @@ export default function NavbarModule() {
               {/* main navigation */}
               <ul className="navbar-nav ml-lg-auto mr-3">
                 {/* <!-- Overview --> */}
-                <li className="nav-item nav-item-spaced d-none d-lg-block">
+                <li className="nav-item nav-item-spaced">
                   <Link href="/">
                     <a className="nav-link" onClick={() => setCollapsed(true)}>
                       Home
@@ -82,10 +81,7 @@ export default function NavbarModule() {
                 </li>
 
                 {/* landing menu */}
-                <li
-                  className="nav-item nav-item-spaced dropdown dropdown-animate"
-                  data-toggle="hover"
-                >
+                <li className="nav-item nav-item-spaced" data-toggle="hover">
                   <Link href={{ pathname: "/coins", query: { page: 1 } }}>
                     <a className="nav-link" onClick={() => setCollapsed(true)}>
                       Coins
@@ -1049,4 +1045,6 @@ export default function NavbarModule() {
       </header>
     </>
   );
-}
+};
+
+export default NavbarModule;

@@ -9,7 +9,7 @@ import {
 
 import { CurrencyFormatter } from "./utils/CurrFormatter";
 
-export default function MarketCaps({ _globalData }) {
+const MarketCaps = (props) => {
   return (
     <>
       <div className="row align-items-center mb-4">
@@ -27,7 +27,7 @@ export default function MarketCaps({ _globalData }) {
                 </div>
               </div>
               <h5 className="h6 font-weight-bolder mb-1">
-                {CurrencyFormatter(_globalData.data.total_market_cap.usd)}
+                {CurrencyFormatter(props._gD.data.total_market_cap.usd)}
               </h5>
               <span className="d-block text-sm text-muted font-weight-bold">
                 Market Capitalization
@@ -44,9 +44,7 @@ export default function MarketCaps({ _globalData }) {
                 </div>
               </div>
               <h5 className="h6 font-weight-bolder mb-1">
-                {CurrencyFormatter(
-                  _globalData.data.total_volume.usd.toFixed(2)
-                )}
+                {CurrencyFormatter(props._gD.data.total_volume.usd.toFixed(2))}
               </h5>
               <span className="d-block text-sm text-muted font-weight-bold">
                 24h Trading Volume
@@ -63,7 +61,7 @@ export default function MarketCaps({ _globalData }) {
                 </div>
               </div>
               <h5 className="h6 font-weight-bolder mb-1">
-                {_globalData.data.market_cap_percentage.btc.toFixed(2)} %
+                {props._gD.data.market_cap_percentage.btc.toFixed(2)} %
               </h5>
               <span className="d-block text-sm text-muted font-weight-bold">
                 Bitcoin Market Cap Dominance
@@ -80,7 +78,7 @@ export default function MarketCaps({ _globalData }) {
                 </div>
               </div>
               <h5 className="h6 font-weight-bolder mb-1">
-                {_globalData.data.active_cryptocurrencies}
+                {props._gD.data.active_cryptocurrencies}
               </h5>
               <span className="d-block text-sm text-muted font-weight-bold">
                 Active CryptoCurrencies
@@ -91,4 +89,6 @@ export default function MarketCaps({ _globalData }) {
       </div>
     </>
   );
-}
+};
+
+export default MarketCaps;

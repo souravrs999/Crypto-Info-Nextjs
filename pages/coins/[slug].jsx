@@ -1,12 +1,15 @@
 import Image from "next/image";
 
-import CoinFirstDataBlock from "../../components/Coins/CoinFirstDataBlock";
-import CoinSecondDataBlock from "../../components/Coins/CoinSecondDataBlock";
+import coinGecko from "../api/coinGecko";
+import CoinChartBlock from "../../components/Coins/CoinDetails/CoinChartBlock";
+import CoinFirstDataBlock from "../../components/Coins/CoinDetails/CoinFirstDataBlock";
+import CoinSecondDataBlock from "../../components/Coins/CoinDetails/CoinSecondDataBlock";
 
 const CoinDetails = (props) => {
   return (
     <>
       <section className="slice slice-sm">
+        {console.log(props)}
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-9">
@@ -19,40 +22,46 @@ const CoinDetails = (props) => {
                 <div className="row">
                   {/* first block */}
                   <CoinFirstDataBlock
-                    coinName={props.coinData.name}
-                    coinImage={props.coinData.image}
-                    currentPrice={props.coinData.market_data.current_price.usd}
-                    marketCR={props.coinData.market_cap_rank}
-                    coinTotSup={props.coinData.market_data.total_supply}
-                    coinCirSup={props.coinData.market_data.circulating_supply}
-                    coinMaxSup={props.coinData.market_data.max_supply}
+                    coinName={props._cD.name}
+                    coinImage={props._cD.image}
+                    currentPrice={props._cD.market_data.current_price.usd}
+                    marketCR={props._cD.market_cap_rank}
+                    coinTotSup={props._cD.market_data.total_supply}
+                    coinCirSup={props._cD.market_data.circulating_supply}
+                    coinMaxSup={props._cD.market_data.max_supply}
                     priceChng1h={
-                      props.coinData.market_data
+                      props._cD.market_data
                         .price_change_percentage_1h_in_currency.usd
                     }
                   />
                   {/* second block */}
                   <CoinSecondDataBlock
-                    mktCap={props.coinData.market_data.market_cap.usd}
-                    totVol={props.coinData.market_data.total_volume.usd}
-                    high24h={props.coinData.market_data.high_24h.usd}
-                    low24h={props.coinData.market_data.low_24h.usd}
+                    mktCap={props._cD.market_data.market_cap.usd}
+                    totVol={props._cD.market_data.total_volume.usd}
+                    high24h={props._cD.market_data.high_24h.usd}
+                    low24h={props._cD.market_data.low_24h.usd}
                     priceChng24h={
-                      props.coinData.market_data.price_change_percentage_24h
+                      props._cD.market_data.price_change_percentage_24h
                     }
                     priceChng7d={
-                      props.coinData.market_data.price_change_percentage_7d
+                      props._cD.market_data.price_change_percentage_7d
                     }
                     priceChng14d={
-                      props.coinData.market_data.price_change_percentage_14d
+                      props._cD.market_data.price_change_percentage_14d
                     }
                     priceChng30d={
-                      props.coinData.market_data.price_change_percentage_30d
+                      props._cD.market_data.price_change_percentage_30d
                     }
                   />
                 </div>
               </div>
               {/* third block */}
+              <CoinChartBlock
+                mktData={props._mC}
+                chngPrcnt={
+                  props._cD.market_data.price_change_percentage_1h_in_currency.usd
+                }
+              />
               <div className="row mb-4">
                 {/* <div className="col-md-6">
                   <div className="card">
@@ -337,28 +346,19 @@ const CoinDetails = (props) => {
   );
 };
 
-// export const getStaticPaths = async () => {
-//   const coins = await fetch(
-//     `${process.env.COINGECKO_API_BASE_URL}/coins/list`
-//   ).then((r) => r.json());
-//   return {
-//     paths: coins.map((coin) => ({
-//       params: {
-//         slug: String(coin.id),
-//       },
-//     })),
-//     fallback: false,
-//   };
-// };
-
 export const getServerSideProps = async ({ params }) => {
-  const coinData = await fetch(
-    `${process.env.COINGECKO_API_BASE_URL}/coins/${params.slug}`
-  ).then((r) => r.json());
+  const _cD = await coinGecko.get(`/coins/${params.slug}`).then((r) => r.data);
+  const _mC = await coinGecko
+    .get(`/coins/${params.slug}/market_chart`, {
+      params: {
+        vs_currency: "usd",
+        days: 1,
+        interval: "hourly",
+      },
+    })
+    .then((r) => r.data);
   return {
-    props: {
-      coinData: coinData,
-    },
+    props: { _cD: _cD, _mC: _mC },
   };
 };
 

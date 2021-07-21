@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import Credits from "./Credits";
 
-export default function Header() {
+const Hero = () => {
   return (
     <section className="slice pt-md-8 pb-5 bg-section-dark">
       <div data-offset-top="#navbar-main">
@@ -61,4 +61,6 @@ export default function Header() {
       </div>
     </section>
   );
-}
+};
+
+export default Hero;

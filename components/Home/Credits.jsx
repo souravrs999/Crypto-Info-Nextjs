@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Credits() {
+const Credits = () => {
   return (
     <>
       <div className="mt-5 mt-lg-5 mt-xl-7">
@@ -103,4 +103,6 @@ export default function Credits() {
       </div>
     </>
   );
-}
+};
+
+export default Credits;

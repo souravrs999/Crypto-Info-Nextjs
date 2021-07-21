@@ -1,44 +1,49 @@
-import Header from "../components/Home/Header";
+import coinGecko from "./api/coinGecko";
+import Header from "../components/Home/Hero";
 import { FavCoins } from "../utils/favCoins";
-
 import JumbotronCoins from "../components/Home/JumbotronCoinSlider";
 import MidContentTileSection from "../components/Home/MidContentTileSections";
 
-export default function Home({ _coinsData, _allCoins }) {
+const Home = (props) => {
   return (
     <>
       <Header />
-      <JumbotronCoins coins={_coinsData} />
-      <MidContentTileSection noCoins={_allCoins.length} />
+      <JumbotronCoins coins={props._cD} />
+      <MidContentTileSection noCoins={props._aC.length} />
     </>
   );
-}
+};
 
-export const getStaticProps = async () => {
-  const _coinsData = await Promise.all(
+export const getServerSideProps = async () => {
+  // @Params
+  //   _cD - coinData holds the coin details of 10 top market cap coins
+  //   _tC - topCoins holds data for the top coins
+  //   _mC - marketCap holds the data regarding the market data for each coin
+  //   _aC - holds data regarding all the supported coins from coingecko
+
+  const _cD = await Promise.all(
     FavCoins.map(async (item) => {
-      const _topCoin = await (
-        await fetch(`https://api.coingecko.com/api/v3/coins/${item}`)
-      ).json();
-      const _mktCap = await (
-        await fetch(
-          `https://api.coingecko.com/api/v3/coins/${item}/market_chart?vs_currency=usd&days=1&interval=hourly`
-        )
-      ).json();
-      return { _topCoin, _mktCap };
+      const _tC = await coinGecko.get(`/coins/${item}`).then((r) => r.data);
+      const _mC = await coinGecko
+        .get(`/coins/${item}/market_chart`, {
+          params: {
+            vs_currency: "usd",
+            days: 1,
+            interval: "hourly",
+          },
+        })
+        .then((r) => r.data);
+      return { _tC, _mC };
     })
   );
-  const _allCoins = await (
-    await fetch(
-      `https://api.coingecko.com/api/v3/coins/list?include_platform=false`
-    )
-  ).json();
-
-  return {
-    props: {
-      _coinsData,
-      _allCoins,
-    },
-    revalidate: 2,
-  };
+  const _aC = await coinGecko
+    .get(`/coins/list`, {
+      params: {
+        include_platform: false,
+      },
+    })
+    .then((r) => r.data);
+  return { props: { _cD: _cD, _aC: _aC } };
 };
+
+export default Home;

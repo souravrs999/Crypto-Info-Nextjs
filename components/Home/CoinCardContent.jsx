@@ -1,17 +1,18 @@
 import { TrendingDown, TrendingUp } from "react-feather";
 
 import CoinPriceChart from "../Charts/CoinPriceChart";
+import { WithoutAxesConfig } from "../Charts/WithoutAxesConfig";
 
-export default function CoinCardContent({ coinName, chngPrcnt, mktData }) {
+const CoinCardContent = (props) => {
   return (
     <>
       <div className="mt-3">
         <div className="d-flex">
-          <h6 className="mb-2">{coinName}</h6>
+          <h6 className="mb-2">{props.coinName}</h6>
           <div className="text-right ml-3">
             <div className="d-flex align-items-center">
               <div>
-                {chngPrcnt > 0 ? (
+                {props.chngPrcnt > 0 ? (
                   <TrendingUp size={12} className="text-success" />
                 ) : (
                   <TrendingDown size={12} className="text-danger" />
@@ -20,10 +21,10 @@ export default function CoinCardContent({ coinName, chngPrcnt, mktData }) {
               <div className="pl-2">
                 <small
                   className={`h6 text-xs ${
-                    chngPrcnt > 0 ? "text-success" : "text-danger"
+                    props.chngPrcnt > 0 ? "text-success" : "text-danger"
                   }`}
                 >
-                  {chngPrcnt.toFixed(2)} %
+                  {props.chngPrcnt.toFixed(2)} %
                 </small>
               </div>
             </div>
@@ -31,10 +32,16 @@ export default function CoinCardContent({ coinName, chngPrcnt, mktData }) {
         </div>
         <CoinPriceChart
           className="pt-0 bg-dark-success"
-          mktData={mktData}
-          chngPrcnt={chngPrcnt}
+          mktData={props.mktData}
+          chngPrcnt={props.chngPrcnt}
+          height={50}
+          width={200}
+          config={WithoutAxesConfig}
+          pointRadius={0}
         />
       </div>
     </>
   );
-}
+};
+
+export default CoinCardContent;

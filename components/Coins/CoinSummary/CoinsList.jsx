@@ -2,13 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Legend from "./Legend";
-import { CurrencyFormatter } from "./utils/CurrFormatter";
+import { CurrencyFormatter } from "../utils/CurrFormatter";
 
-export default function CoinList({ coinList }) {
+const CoinList = (props) => {
   return (
     <div>
       <Legend>
-        {coinList.map((coin, idx) => (
+        {props._cD.map((coin, idx) => (
           <tr className="shadow" key={coin.id}>
             {/* coin icon name and symbol */}
 
@@ -104,4 +104,6 @@ export default function CoinList({ coinList }) {
       </Legend>
     </div>
   );
-}
+};
+
+export default CoinList;

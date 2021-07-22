@@ -9,7 +9,7 @@ const CoinPriceChart = (props) => {
   function formatData(data) {
     return data.map((el) => {
       return {
-        x: new Date(el[0]).toLocaleString().substr(11, 5),
+        x: new Date(el[0]).toLocaleString().substr(11,9),
         y: el[1].toFixed(2),
       };
     });
@@ -20,7 +20,7 @@ const CoinPriceChart = (props) => {
       {
         label: router.query.slug,
         fill: true,
-        data: formatData(props.mktData.prices),
+        data: formatData(props.data),
         borderColor: props.chngPrcnt > 0 ? "#5cc9a7" : "#f25767",
         backgroundColor:
           props.chngPrcnt > 0

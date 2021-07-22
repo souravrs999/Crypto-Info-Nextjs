@@ -32,7 +32,7 @@ const CoinCardContent = (props) => {
         </div>
         <CoinPriceChart
           className="pt-0 bg-dark-success"
-          mktData={props.mktData}
+          data={props.mktData.prices}
           chngPrcnt={props.chngPrcnt}
           height={50}
           config={WithoutAxesConfig}

@@ -4,6 +4,7 @@ import coinGecko from "../api/coinGecko";
 import CoinChartBlock from "../../components/Coins/CoinDetails/CoinChartBlock";
 import CoinFirstDataBlock from "../../components/Coins/CoinDetails/CoinFirstDataBlock";
 import CoinSecondDataBlock from "../../components/Coins/CoinDetails/CoinSecondDataBlock";
+import CoinDescriptionBlock from "../../components/Coins/CoinDetails/CoinDescriptionBlock";
 
 const CoinDetails = (props) => {
   return (
@@ -56,11 +57,28 @@ const CoinDetails = (props) => {
               </div>
               {/* third block */}
               <CoinChartBlock
-                mktData={props._mC}
+                title="Prices"
+                data={props._mC.prices}
                 chngPrcnt={
-                  props._cD.market_data.price_change_percentage_1h_in_currency.usd
+                  props._cD.market_data.price_change_percentage_1h_in_currency
+                    .usd
                 }
               />
+              <CoinChartBlock
+                title="Market Cap"
+                data={props._mC.market_caps}
+                chngPrcnt={
+                  props._cD.market_data.market_cap_change_percentage_24h.usd
+                }
+              />
+              <CoinChartBlock
+                title="Total Volume"
+                data={props._mC.total_volumes}
+                chngPrcnt={
+                  props._cD.market_data.market_cap_change_percentage_24h.usd
+                }
+              />
+              <CoinDescriptionBlock _cDesc={props._cD.description.en} />
               <div className="row mb-4">
                 {/* <div className="col-md-6">
                   <div className="card">
@@ -346,6 +364,8 @@ const CoinDetails = (props) => {
 };
 
 export const getServerSideProps = async ({ params }) => {
+  // params cotain the current slug of the page eg: bitcoin, ethereum
+  // use the slug as id for coingecko market api call
   const _cD = await coinGecko.get(`/coins/${params.slug}`).then((r) => r.data);
   const _mC = await coinGecko
     .get(`/coins/${params.slug}/market_chart`, {
